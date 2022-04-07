@@ -1,0 +1,4 @@
+# My zsh profiles
+
+# General
+export EDITOR=vim
