@@ -5,13 +5,6 @@ if [ -e $ZSH_HOME/zplug_loader.sh ]; then
     source $ZSH_HOME/zplug_loader.sh
 fi
 
-autoload -U parseopts
-autoload -U zargs
-autoload -U zcalc
-autoload -U zed
-autoload -U zmv
-autoload -U compinit && compinit
-
 if [ -e $HOME/bin ]; then
     export PATH=$HOME/bin:$PATH
 fi
@@ -23,6 +16,13 @@ fi
 if [ -e $ZSH_HOME/my_profile ]; then
     source $ZSH_HOME/my_profile
 fi
+
+autoload -U parseopts
+autoload -U zargs
+autoload -U zcalc
+autoload -U zed
+autoload -U zmv
+autoload -U compinit && compinit
 
 # User-defined as following
 # Recommended adding to .zsh.d/my_profile
