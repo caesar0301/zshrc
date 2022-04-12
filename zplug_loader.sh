@@ -17,6 +17,8 @@ zplug "plugins/jsontools",   from:oh-my-zsh
 zplug "plugins/virtualenvwrapper",   from:oh-my-zsh
 
 zplug "zsh-users/zsh-completions", use:src
+fpath=($ZPLUG_HOME/repos/zsh-users/zsh-completions/src $fpath)
+
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh
 zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh
 zplug "zsh-users/zsh-history-substring-search"
