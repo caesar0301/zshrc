@@ -8,8 +8,8 @@ if [ -e $ZSH_HOME/config/alias.sh ]; then
     source $ZSH_HOME/config/alias.sh
 fi
 
-if [ -e $ZSH_HOME/profile.me ]; then
-    source $ZSH_HOME/profile.me
+if [ -e $ZSH_HOME/my_profile ]; then
+    source $ZSH_HOME/my_profile
 fi
 
 if [ -e $ZSH_HOME/bin ]; then
