@@ -5,4 +5,4 @@ if [ -e $HOME/.zsh.d/config/init.sh ]; then
 fi
 
 # User-defined as following, Recommended adding to
-#  .zsh.d/profile.me
+#  .zsh.d/my_profile
