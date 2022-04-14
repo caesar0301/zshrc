@@ -21,6 +21,10 @@ chsh --shell=$(which zsh) $USER
 chsh -s /bin/zsh $USER
 ```
 
+## Custom
+
+You may or surely have self-customized settings as previously located at `.zshrc`. With this repo, `~/.zsh.d/my_profile` or `~/.zsh.d/.profile` or `~/.zsh.d/.zprofile` is preferred (as ignored by git) without messing up predefined modules.
+
 ## Dev
 
 All plugins and my daily modules are configured in `zplug_loader.zsh`.
