@@ -1,8 +1,7 @@
 # filename: .zshrc
 
-if [ -e $HOME/.zsh.d/config/init.sh ]; then
-    source $HOME/.zsh.d/config/init.sh
+if [ -e $HOME/.zsh.d/init.zsh ]; then
+    source $HOME/.zsh.d/init.zsh
 fi
 
-# User-defined as following, Recommended adding to
-#  .zsh.d/my_profile
+# User-defined as following
