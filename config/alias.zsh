@@ -3,6 +3,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias duh="du -hs .[^.]*"
 
+# proxy
+alias pc="proxychains4 -q"
+
 # Git
 alias ga="git add"
 alias gb="git branch"

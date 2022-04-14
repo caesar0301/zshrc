@@ -13,7 +13,8 @@ zplug "${ZSH_HOME}/my_ext", from:local, use:"*.zsh"
 
 # Pre-defined
 zplug "${ZSH_HOME}/config", from:local, use:"alias.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"default.zsh"
+zplug "${ZSH_HOME}/config", from:local, use:"autoload.zsh"
+zplug "${ZSH_HOME}/config", from:local, use:"general.zsh"
 zplug "${ZSH_HOME}/config", from:local, use:"func.zsh"
 
 # OMZ
