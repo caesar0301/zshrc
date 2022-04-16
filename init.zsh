@@ -8,15 +8,6 @@ fi
 export ZPLUG_HOME=${ZSH_HOME}/zplug
 source $ZPLUG_HOME/init.zsh
 
-# User extensions
-zplug "${ZSH_HOME}/my_ext", from:local, use:"*.zsh"
-
-# Pre-defined
-zplug "${ZSH_HOME}/config", from:local, use:"alias.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"autoload.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"general.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"func.zsh"
-
 # OMZ
 zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
 
@@ -60,6 +51,16 @@ fpath=($ZPLUG_HOME/repos/zsh-users/zsh-completions/src $fpath)
 # Fish-shell likes
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh
 zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh
+
+# Pre-defined
+zplug "${ZSH_HOME}/config", from:local, use:"autoload.zsh"
+zplug "${ZSH_HOME}/config", from:local, use:"alias.zsh"
+zplug "${ZSH_HOME}/config", from:local, use:"general.zsh"
+zplug "${ZSH_HOME}/config", from:local, use:"func.zsh"
+
+# User extensions
+zplug "${ZSH_HOME}/my_ext", from:local, use:"*.sh"
+zplug "${ZSH_HOME}/my_ext", from:local, use:"*.zsh"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
