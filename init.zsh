@@ -4,6 +4,13 @@ if [ -e $ZSH_HOME/bin ]; then
     export PATH=$ZSH_HOME/bin:$PATH
 fi
 
+autoload -U parseopts
+autoload -U zargs
+autoload -U zcalc
+autoload -U zed
+autoload -U zmv
+autoload -U compinit && compinit
+
 # ZPlug
 export ZPLUG_HOME=${ZSH_HOME}/zplug
 source $ZPLUG_HOME/init.zsh
@@ -33,7 +40,7 @@ zplug "plugins/tmuxinator", from:oh-my-zsh
 
 # MacOS
 zplug "plugins/iterm2", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
-zplug "${ZSH_HOME}/config", from:local, use:"macos.zsh", if:"[[ $OSTYPE == darwin* ]]"
+zplug "${ZSH_HOME}/config/macos", from:local, use:"macos.zsh", if:"[[ $OSTYPE == darwin* ]]"
 
 # Python
 zplug "plugins/pyenv", from:oh-my-zsh
@@ -52,11 +59,11 @@ fpath=($ZPLUG_HOME/repos/zsh-users/zsh-completions/src $fpath)
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh
 zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh
 
-# Pre-defined
-zplug "${ZSH_HOME}/config", from:local, use:"autoload.zsh"
+# Pre-defined configs
+zplug "${ZSH_HOME}/config", from:local, use:"basic.zsh"
 zplug "${ZSH_HOME}/config", from:local, use:"alias.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"general.zsh"
 zplug "${ZSH_HOME}/config", from:local, use:"func.zsh"
+zplug "${ZSH_HOME}/config", from:local, use:"devtools.zsh"
 
 # User extensions
 zplug "${ZSH_HOME}/my_ext", from:local, use:"*.sh"
