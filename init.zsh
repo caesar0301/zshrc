@@ -4,6 +4,7 @@ if [ -e $ZSH_HOME/bin ]; then
     export PATH=$ZSH_HOME/bin:$PATH
 fi
 
+# zsh bundled
 autoload -U parseopts
 autoload -U zargs
 autoload -U zcalc
@@ -23,12 +24,20 @@ zplug "plugins/aliases", from:oh-my-zsh
 zplug "plugins/cp", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
+zplug "plugins/dirhistory", from:oh-my-zsh
+
+# Colored
+zplug "plugins/colored-man-pages", from:oh-my-zsh
 
 # Dev
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/gitignore", from:oh-my-zsh
 zplug "plugins/mvn", from:oh-my-zsh
+
+# Share
+zplug "plugins/transfer", from:oh-my-zsh
 
 # Web
 zplug "plugins/web-search", from:oh-my-zsh
@@ -39,6 +48,8 @@ zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/tmuxinator", from:oh-my-zsh
 
 # MacOS
+zplug "plugins/macos", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
+zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
 zplug "plugins/iterm2", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
 zplug "${ZSH_HOME}/config/macos", from:local, use:"macos.zsh", if:"[[ $OSTYPE == darwin* ]]"
 
@@ -47,11 +58,11 @@ zplug "plugins/pyenv", from:oh-my-zsh
 zplug "plugins/virtualenv", from:oh-my-zsh
 
 # Themes
+zplug "plugins/themes", from:oh-my-zsh
 zplug "themes/robbyrussell", from:oh-my-zsh
 
 # Completion
 zplug "plugins/history-substring-search", from:oh-my-zsh
-zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "zsh-users/zsh-completions", use:src
 fpath=($ZPLUG_HOME/repos/zsh-users/zsh-completions/src $fpath)
 
