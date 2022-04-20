@@ -80,7 +80,7 @@ zplug "${ZSH_HOME}/config", from:local, use:"devtools.zsh"
 zplug "${ZSH_HOME}/my_ext", from:local, use:"*.sh"
 zplug "${ZSH_HOME}/my_ext", from:local, use:"*.zsh"
 
-if ! zplug check --verbose; then
+if ! zplug check; then
     printf "Install? [y/N]: "
     if read -q; then
         echo
