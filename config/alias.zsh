@@ -3,6 +3,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias duh="du -hs .[^.]*"
+alias em='emacs'
 
 # Proxy
 alias pc="proxychains4 -q"
