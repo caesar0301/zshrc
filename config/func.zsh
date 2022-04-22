@@ -48,6 +48,7 @@ function proxy {
     fi
     export http_proxy="http://${PROXY_IP}:7890"
     export https_proxy="http://${PROXY_IP}:7890"
+    export all_proxy="socks5://${PROXY_IP}:7890"
     export PROMPT="[P] $PROMPT"
 }
 
