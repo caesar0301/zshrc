@@ -58,3 +58,10 @@ function noproxy {
     unset https_proxy
     unset OLD_PROMPT
 }
+
+# Docker image tag generator
+function genimgver {
+    TAG="${1:-notag}"
+    MODE="${2:-release}"
+    echo ${MODE}_$(date +"%Y%m%d%H%M%S")_${TAG}_$(git rev-parse HEAD | head -c 8)
+}
