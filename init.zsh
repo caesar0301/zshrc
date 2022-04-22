@@ -59,7 +59,7 @@ zplug "plugins/virtualenv", from:oh-my-zsh
 
 # Themes
 zplug "plugins/themes", from:oh-my-zsh
-zplug "themes/robbyrussell", from:oh-my-zsh
+zplug "themes/gallifrey", from:oh-my-zsh
 
 # Completion
 zplug "plugins/history-substring-search", from:oh-my-zsh
