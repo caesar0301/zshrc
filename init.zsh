@@ -63,7 +63,7 @@ if command -v starship &>/dev/null; then
     eval "$(starship init zsh)"
 else
     zplug "plugins/themes", from:oh-my-zsh
-    zplug "themes/tjkirch", from:oh-my-zsh
+    zplug "themes/robbyrussell", from:oh-my-zsh
 fi
 
 # Completion
