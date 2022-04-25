@@ -58,8 +58,13 @@ zplug "plugins/pyenv", from:oh-my-zsh
 zplug "plugins/virtualenv", from:oh-my-zsh
 
 # Themes
-zplug "plugins/themes", from:oh-my-zsh
-zplug "themes/tjkirch", from:oh-my-zsh
+if [[ $(which starship) ]]; then
+    export STARSHIP_CONFIG=$ZSH_HOME/starship/starship.toml
+    eval "$(starship init zsh)"
+else
+    zplug "plugins/themes", from:oh-my-zsh
+    zplug "themes/tjkirch", from:oh-my-zsh
+fi
 
 # Completion
 zplug "plugins/history-substring-search", from:oh-my-zsh
