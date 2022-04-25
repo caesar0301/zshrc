@@ -58,7 +58,7 @@ zplug "plugins/pyenv", from:oh-my-zsh
 zplug "plugins/virtualenv", from:oh-my-zsh
 
 # Themes
-if [[ $(which starship) ]]; then
+if command -v starship &>/dev/null; then
     export STARSHIP_CONFIG=$ZSH_HOME/starship/starship.toml
     eval "$(starship init zsh)"
 else
