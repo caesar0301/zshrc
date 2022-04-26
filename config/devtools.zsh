@@ -29,3 +29,9 @@ if [ -e "$HOME/.jenv" ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
 fi
+
+# rbenv
+if [ -e "$HOME/.rbenv" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    rbenv init
+fi
