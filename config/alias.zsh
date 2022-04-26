@@ -1,5 +1,6 @@
 # Common
 alias rm='rm -i'
+alias rmf='rm -rf'
 alias cp='cp -i'
 alias mv='mv -i'
 alias duh="du -hs .[^.]*"
