@@ -10,7 +10,7 @@ disabled = true
 disabled = true
 
 [cmd_duration]
-min_time = 10_000                   # Show command duration over 10,000 milliseconds (= 10 sec)
+min_time = 10_000
 format = "took [$duration]($style)"
 
 [character]
@@ -21,7 +21,7 @@ error_symbol = "[X](bold red) "
 charging_symbol = "⚡️ "
 discharging_symbol = "💀 "
 
-[[battery.display]] # "bold red" style when capacity is between 0% and 20%
+[[battery.display]]
 threshold = 20
 style = "bold red"
 

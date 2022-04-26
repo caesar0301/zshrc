@@ -13,11 +13,15 @@ if [ -e "$HOME/.pyenv" ]; then
     fi
 fi
 
-# Rust
-if [ -e "$HOME/.cargo" ]; then
-    export PATH="$HOME/.cargo/bin":$PATH
+# Rust and cargo
+if command -v rustc &>/dev/null; then
     export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
     export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+fi
+if command -v cargo &>/dev/null; then
+    if [ -e "$HOME/.cargo" ]; then
+        export PATH="$HOME/.cargo/bin":$PATH
+    fi
 fi
 
 # jenv

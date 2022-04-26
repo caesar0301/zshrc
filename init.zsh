@@ -59,7 +59,11 @@ zplug "plugins/virtualenv", from:oh-my-zsh
 
 # Themes
 if command -v starship &>/dev/null; then
-    export STARSHIP_CONFIG=$ZSH_HOME/starship/starship.toml
+    if [[ $OSTYPE == darwin* ]]; then
+        export STARSHIP_CONFIG=$ZSH_HOME/starship/macos.toml
+    else
+        export STARSHIP_CONFIG=$ZSH_HOME/starship/basic.toml
+    fi
     eval "$(starship init zsh)"
 else
     zplug "plugins/themes", from:oh-my-zsh
