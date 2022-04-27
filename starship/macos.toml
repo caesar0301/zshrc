@@ -13,9 +13,6 @@ disabled = true
 min_time = 10_000
 format = "took [$duration]($style)"
 
-[character]
-error_symbol = "[X](bold red) "
-
 # These symbols will only show when battery levels are 20% or less
 [battery]
 charging_symbol = "⚡️ "
@@ -25,12 +22,7 @@ discharging_symbol = "💀 "
 threshold = 20
 style = "bold red"
 
-# Clear visibility for exit codes
-[status]
-style = "bg:red"
-symbol = "💣 "
-format = '[\[$symbol$status\]]($style) '
-disabled = false
+# Git
 
 [git_branch]
 symbol = "🌱 "
