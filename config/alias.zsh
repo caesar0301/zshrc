@@ -19,6 +19,7 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias ghf="git log --follow -p --"
 alias grsh="git reset --soft HEAD^ && git reset --hard HEAD"
+alias gsrh="git submodule foreach --recursive git reset --hard"
 
 # zsh
 alias zshrc='${=EDITOR} $HOME/.zshrc'
