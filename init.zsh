@@ -86,8 +86,7 @@ zplug "${ZSH_HOME}/config", from:local, use:"func.zsh"
 zplug "${ZSH_HOME}/config", from:local, use:"devtools.zsh"
 
 # User extensions
-zplug "${ZSH_HOME}/my_ext", from:local, use:"*.sh"
-zplug "${ZSH_HOME}/my_ext", from:local, use:"*.zsh"
+zplug "${ZSH_HOME}/my_ext", from:local, use:"*.ext.zsh"
 
 if ! zplug check; then
     printf "Install? [y/N]: "
