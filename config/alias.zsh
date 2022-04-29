@@ -5,7 +5,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias duh="du -hs .[^.]*"
 alias em='emacs'
-alias grep="grep -n"
 alias team="pssh -i -h $HOME/.pssh_hosts"
 
 # Proxy
