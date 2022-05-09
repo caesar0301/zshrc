@@ -27,7 +27,7 @@ alias zshld='source $HOME/.zshrc'
 
 # vim
 alias vimrc='${=EDITOR} $HOME/.vimrc'
-alias vimmc='${=EDITOR} $HOME/.vim_runtime/my_configs/my.vim'
+alias vimmc='${=EDITOR} $HOME/.vim_runtime/my_configs.vim'
 
 # java
 alias cfr="java -jar ~/.zsh.d/bin/cfr-0.152.jar"
