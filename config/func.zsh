@@ -65,3 +65,26 @@ function genimgver {
     MODE="${2:-release}"
     echo ${MODE}_$(date +"%Y%m%d%H%M%S")_${TAG}_$(git rev-parse HEAD | head -c 8)
 }
+
+# Set local header and libs
+function prefixlocal {
+    export OLD_LP_PROMPT=$PROMPT
+    export OLD_LDPATH=$LD_LIBRARY_PATH
+    export OLD_CINCLUDE=$C_INCLUDE_PATH
+    export OLD_CPPINCLUDE=$CPLUS_INCLUDE_PATH
+    export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+    export C_INCLUDE_PATH=$HOME/.local/include:$C_INCLUDE_PATH
+    export CPLUS_INCLUDE_PATH=$HOME/.local/include:$CPLUS_INCLUDE_PATH
+    export PROMPT="[LP] $PROMPT"
+}
+
+function noprefixlocal {
+    export PROMPT=$OLD_LP_PROMPT
+    export LD_LIBRARY_PATH=$OLD_LDPATH
+    export C_INCLUDE_PATH=$OLD_CINCLUDE
+    export CPLUS_INCLUDE_PATH=$OLD_CPPINCLUDE
+    unset OLD_LP_PROMPT
+    unset OLD_LDPATH
+    unset OLD_CINCLUDE
+    unset OLD_CPPINCLUDE
+}
