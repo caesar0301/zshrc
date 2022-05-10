@@ -36,8 +36,15 @@ function gitrmsubmod {
     git rm -f $SUBMODULE
 }
 
+# Docker image tag generator
+function genimgver {
+    TAG="${1:-notag}"
+    MODE="${2:-release}"
+    echo ${MODE}_$(date +"%Y%m%d%H%M%S")_${TAG}_$(git rev-parse HEAD | head -c 8)
+}
+
 # Proxy triggers
-function proxy {
+function enableProxy {
     export OLD_PROMPT="$PROMPT"
     PROXY_IP="127.0.0.1"
     if [[ $(uname -r) =~ "microsoft-standard" ]]; then
@@ -51,40 +58,66 @@ function proxy {
     export all_proxy="socks5://${PROXY_IP}:7890"
     export PROMPT="[P] $PROMPT"
 }
-
-function noproxy {
+function disableProxy {
     export PROMPT=$OLD_PROMPT
     unset http_proxy
     unset https_proxy
     unset OLD_PROMPT
 }
 
-# Docker image tag generator
-function genimgver {
-    TAG="${1:-notag}"
-    MODE="${2:-release}"
-    echo ${MODE}_$(date +"%Y%m%d%H%M%S")_${TAG}_$(git rev-parse HEAD | head -c 8)
-}
-
 # Set local header and libs
-function prefixlocal {
+function enablePrefixLocal {
     export OLD_LP_PROMPT=$PROMPT
-    export OLD_LDPATH=$LD_LIBRARY_PATH
-    export OLD_CINCLUDE=$C_INCLUDE_PATH
-    export OLD_CPPINCLUDE=$CPLUS_INCLUDE_PATH
+    export OLD_LP_LDPATH=$LD_LIBRARY_PATH
+    export OLD_LP_CINCLUDE=$C_INCLUDE_PATH
+    export OLD_LP_CPPINCLUDE=$CPLUS_INCLUDE_PATH
     export LD_LIBRARY_PATH=$HOME/.local/lib64:$HOME/.local/lib:$LD_LIBRARY_PATH
     export C_INCLUDE_PATH=$HOME/.local/include:$C_INCLUDE_PATH
     export CPLUS_INCLUDE_PATH=$HOME/.local/include:$CPLUS_INCLUDE_PATH
     export PROMPT="[LP] $PROMPT"
 }
-
-function noprefixlocal {
+function disablePrefixLocal {
     export PROMPT=$OLD_LP_PROMPT
-    export LD_LIBRARY_PATH=$OLD_LDPATH
-    export C_INCLUDE_PATH=$OLD_CINCLUDE
-    export CPLUS_INCLUDE_PATH=$OLD_CPPINCLUDE
+    export LD_LIBRARY_PATH=$OLD_LP_LDPATH
+    export C_INCLUDE_PATH=$OLD_LP_CINCLUDE
+    export CPLUS_INCLUDE_PATH=$OLD_LP_CPPINCLUDE
     unset OLD_LP_PROMPT
-    unset OLD_LDPATH
-    unset OLD_CINCLUDE
-    unset OLD_CPPINCLUDE
+    unset OLD_LP_LDPATH
+    unset OLD_LP_CINCLUDE
+    unset OLD_LP_CPPINCLUDE
 }
+
+# Trigger gcc9
+function enableGCC9 {
+    export OLD_GCC9_PROMPT=$PROMPT
+    export OLD_GCC9_PATH=$PATH
+    export OLD_GCC9_CC=$CC
+    export OLD_GCC9_CXX=$CXX
+    export OLD_GCC9_LDPATH=$LD_LIBRARY_PATH
+    export OLD_GCC9_CINCLUDE=$C_INCLUDE_PATH
+    export OLD_GCC9_CPPINCLUDE=$CPLUS_INCLUDE_PATH
+    export PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/bin:$PATH
+    export CC=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/bin/gcc
+    export CXX=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/bin/g++
+    export LD_LIBRARY_PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/lib64/:$LD_LIBRARY_PATH
+    export C_INCLUDE_PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/include/:$C_INCLUDE_PATH
+    export CPLUS_INCLUDE_PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/include/:$CPLUS_INCLUDE_PATH
+    export PROMPT="[GCC9] $PROMPT"
+}
+function disableGCC9 {
+    export PROMPT=$OLD_GCC9_PROMPT
+    export PATH=$OLD_GCC9_PATH
+    export CC=$OLD_GCC9_CC
+    export CXX=$OLD_GCC9_CXX
+    export LD_LIBRARY_PATH=$OLD_GCC9_LDPATH
+    export C_INCLUDE_PATH=$OLD_GCC9_CINCLUDE
+    export CPLUS_INCLUDE_PATH=$OLD_GCC9_CPPINCLUDE
+    unset OLD_GCC9_PROMPT
+    unset OLD_GCC9_PATH
+    unset OLD_GCC9_CC
+    unset OLD_GCC9_CXX
+    unset OLD_GCC9_LDPATH
+    unset OLD_GCC9_CINCLUDE
+    unset OLD_GCC9_CPPINCLUDE
+}
+
