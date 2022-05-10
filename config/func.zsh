@@ -72,7 +72,7 @@ function prefixlocal {
     export OLD_LDPATH=$LD_LIBRARY_PATH
     export OLD_CINCLUDE=$C_INCLUDE_PATH
     export OLD_CPPINCLUDE=$CPLUS_INCLUDE_PATH
-    export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$HOME/.local/lib64:$HOME/.local/lib:$LD_LIBRARY_PATH
     export C_INCLUDE_PATH=$HOME/.local/include:$C_INCLUDE_PATH
     export CPLUS_INCLUDE_PATH=$HOME/.local/include:$CPLUS_INCLUDE_PATH
     export PROMPT="[LP] $PROMPT"
