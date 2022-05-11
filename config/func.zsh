@@ -74,7 +74,7 @@ function enablePrefixLocal {
     export LD_LIBRARY_PATH=$HOME/.local/lib64:$HOME/.local/lib:$LD_LIBRARY_PATH
     export C_INCLUDE_PATH=$HOME/.local/include:$C_INCLUDE_PATH
     export CPLUS_INCLUDE_PATH=$HOME/.local/include:$CPLUS_INCLUDE_PATH
-    export PROMPT="[LP] $PROMPT"
+    export PROMPT="[PL] $PROMPT"
 }
 function disablePrefixLocal {
     export PROMPT=$OLD_LP_PROMPT
