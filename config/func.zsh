@@ -43,6 +43,19 @@ function genimgver {
     echo ${MODE}_$(date +"%Y%m%d%H%M%S")_${TAG}_$(git rev-parse HEAD | head -c 8)
 }
 
+# Open file window
+function openw {
+    KNAME=$(uname -s)
+    KREL=$(uname -r)
+    EXE='open'
+    if [[ $KNAME == "Linux" ]]; then
+        if [[ $KREL =~ "microsoft-standard" ]]; then
+            EXE='explorer.exe'
+        fi
+    fi
+    $EXE $@
+}
+
 # Proxy triggers
 function enableProxy {
     export OLD_PROMPT="$PROMPT"
