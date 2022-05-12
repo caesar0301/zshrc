@@ -30,3 +30,6 @@ alias vimmc='${=EDITOR} $HOME/.vim_runtime/my_configs.vim'
 
 # java
 alias cfr="java -jar ~/.zsh.d/bin/cfr-0.152.jar"
+
+# cmake
+alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
