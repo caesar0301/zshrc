@@ -73,6 +73,7 @@ function enableProxy {
     export all_proxy="socks5://${PROXY_IP}:7890"
     export PROMPT="[P] $PROMPT"
 }
+
 function disableProxy {
     export PROMPT=$OLD_PROMPT
     unset http_proxy
@@ -89,6 +90,7 @@ function enablePrefixLocal {
     export C_INCLUDE_PATH=$HOME/.local/include:$C_INCLUDE_PATH
     export CPLUS_INCLUDE_PATH=$HOME/.local/include:$CPLUS_INCLUDE_PATH
 }
+
 function disablePrefixLocal {
     export LD_LIBRARY_PATH=$OLD_LP_LDPATH
     export C_INCLUDE_PATH=$OLD_LP_CINCLUDE
@@ -96,35 +98,5 @@ function disablePrefixLocal {
     unset OLD_LP_LDPATH
     unset OLD_LP_CINCLUDE
     unset OLD_LP_CPPINCLUDE
-}
-
-# Trigger gcc9
-function enableGCC9 {
-    export OLD_GCC9_PATH=$PATH
-    export OLD_GCC9_CC=$CC
-    export OLD_GCC9_CXX=$CXX
-    export OLD_GCC9_LDPATH=$LD_LIBRARY_PATH
-    export OLD_GCC9_CINCLUDE=$C_INCLUDE_PATH
-    export OLD_GCC9_CPPINCLUDE=$CPLUS_INCLUDE_PATH
-    export PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/bin:$PATH
-    export CC=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/bin/gcc
-    export CXX=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/bin/g++
-    export LD_LIBRARY_PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/lib64/:$LD_LIBRARY_PATH
-    export C_INCLUDE_PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/include/:$C_INCLUDE_PATH
-    export CPLUS_INCLUDE_PATH=/apsara/alicpp/built/gcc-9.2.1/gcc-9.2.1/include/:$CPLUS_INCLUDE_PATH
-}
-function disableGCC9 {
-    export PATH=$OLD_GCC9_PATH
-    export CC=$OLD_GCC9_CC
-    export CXX=$OLD_GCC9_CXX
-    export LD_LIBRARY_PATH=$OLD_GCC9_LDPATH
-    export C_INCLUDE_PATH=$OLD_GCC9_CINCLUDE
-    export CPLUS_INCLUDE_PATH=$OLD_GCC9_CPPINCLUDE
-    unset OLD_GCC9_PATH
-    unset OLD_GCC9_CC
-    unset OLD_GCC9_CXX
-    unset OLD_GCC9_LDPATH
-    unset OLD_GCC9_CINCLUDE
-    unset OLD_GCC9_CPPINCLUDE
 }
 
