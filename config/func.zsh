@@ -47,11 +47,13 @@ function genimgver {
 function openw {
     KNAME=$(uname -s)
     KREL=$(uname -r)
-    EXE='open'
+    EXE='nautilus'
     if [[ $KNAME == "Linux" ]]; then
         if [[ $KREL =~ "microsoft-standard" ]]; then
             EXE='explorer.exe'
         fi
+    elif [[ $KNAME == "Darwin"  ]]; then
+        EXE='open'
     fi
     $EXE $@
 }
