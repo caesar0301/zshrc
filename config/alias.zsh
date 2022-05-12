@@ -1,9 +1,10 @@
 # Common
-alias rm='rm -i'
 alias rmf='rm -rf'
-alias mv='mv -i'
 alias duh="du -hs .[^.]*"
 alias em='emacs'
+alias diff='diff -r'
+
+# batch
 alias team="pssh -i -h $HOME/.pssh_hosts"
 
 # Proxy
