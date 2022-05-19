@@ -26,7 +26,7 @@ zi snippet OMZL::spectrum.zsh
 zi snippet OMZL::theme-and-appearance.zsh
 
 # Efficiency
-zi snippet OMZP::aliases
+zi snippet OMZP::alias-finder
 zi snippet OMZP::cp
 zi snippet OMZP::extract
 zi snippet OMZP::vi-mode
