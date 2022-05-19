@@ -9,7 +9,7 @@ if [ -e "$HOME/.pyenv" ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     if command -v pyenv 1>/dev/null 2>&1; then
-        eval "$(pyenv init -)"
+        eval "$(pyenv init --path)"
     fi
 fi
 
@@ -33,5 +33,5 @@ fi
 # rbenv
 if [ -e "$HOME/.rbenv" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
-    rbenv init
+    eval "$(rbenv init - zsh)"
 fi

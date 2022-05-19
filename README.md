@@ -1,12 +1,12 @@
 # zshrc
 
-This repo holds a bunch of zsh predefines configs and plugins as managed by [zplug](https://github.com/zplug/zplug).
+This repo holds a bunch of zsh predefines configs and plugins as managed by [zi](https://github.com/z-shell/zi) or [zplug](https://github.com/zplug/zplug).
 
 ## Install
 
 ```bash
 git clone --recursive https://github.com/caesar0301/zshrc.git ~/.zsh_runtime
-cp ~/.zsh_runtime/default.zshrc ~/.zshrc
+ln -sf ~/.zsh_runtime/default.zshrc ~/.zshrc
 ```
 
 ### Change default shell

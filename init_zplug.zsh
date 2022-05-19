@@ -1,17 +1,3 @@
-export ZSH_HOME=${HOME}/.zsh_runtime
-
-if [ -e $ZSH_HOME/bin ]; then
-    export PATH=$ZSH_HOME/bin:$PATH
-fi
-
-# zsh bundled
-autoload -U parseopts
-autoload -U zargs
-autoload -U zcalc
-autoload -U zed
-autoload -U zmv
-autoload -U compinit && compinit
-
 # ZPlug
 export ZPLUG_HOME=${ZSH_HOME}/zplug
 source $ZPLUG_HOME/init.zsh
