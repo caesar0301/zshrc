@@ -1,4 +1,4 @@
-export ZSH_HOME=${HOME}/.zsh.d
+export ZSH_HOME=${HOME}/.zsh_runtime
 
 if [ -e $ZSH_HOME/bin ]; then
     export PATH=$ZSH_HOME/bin:$PATH
