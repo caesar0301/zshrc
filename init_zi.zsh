@@ -11,7 +11,7 @@ zi snippet ${ZSH_RUNTIME}/config/devtools.zsh
 zi snippet ${ZSH_RUNTIME}/config/basic.zsh
 
 # My extensions
-for i in `find ${ZSH_RUNTIME}/my_ext -name "*.ext.zsh" -maxdepth 1`; do
+for i in `find ${ZSH_RUNTIME}/my_ext -maxdepth 1 -type f -name "*.ext.zsh"`; do
     zi snippet $i
 done
 
