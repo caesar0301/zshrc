@@ -37,7 +37,7 @@ zplug "plugins/tmuxinator", from:oh-my-zsh
 zplug "plugins/macos", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
 zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
 zplug "plugins/iterm2", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
-zplug "${ZSH_HOME}/config/macos", from:local, use:"macos.zsh", if:"[[ $OSTYPE == darwin* ]]"
+zplug "${ZSH_HOME}/ext/macos", from:local, use:"macos.zsh", if:"[[ $OSTYPE == darwin* ]]"
 
 # Python
 zplug "plugins/pyenv", from:oh-my-zsh
@@ -65,11 +65,11 @@ fpath=($ZPLUG_HOME/repos/zsh-users/zsh-completions/src $fpath)
 zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh
 zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh
 
-# Pre-defined configs
-zplug "${ZSH_HOME}/config", from:local, use:"basic.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"alias.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"func.zsh"
-zplug "${ZSH_HOME}/config", from:local, use:"devtools.zsh"
+# Pre-defined
+zplug "${ZSH_HOME}/ext", from:local, use:"basic.zsh"
+zplug "${ZSH_HOME}/ext", from:local, use:"alias.zsh"
+zplug "${ZSH_HOME}/ext", from:local, use:"func.zsh"
+zplug "${ZSH_HOME}/ext", from:local, use:"devtools.zsh"
 
 # User extensions
 zplug "${ZSH_HOME}/my_ext", from:local, use:"*.ext.zsh"

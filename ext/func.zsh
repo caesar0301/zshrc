@@ -65,7 +65,7 @@ function enableProxy {
     if [[ $(uname -r) =~ "microsoft-standard" ]]; then
         PROXY_IP=$(/mnt/c/Windows/system32/ipconfig.exe /all |
             sed -n -E "s|.*IPv4 Address.*([0-9]{3}(\.[0-9]*){3})\(Preferred\)|\1|p" |
-            grep 192 |
+            grep 192.168.0 |
             tr -d '\r\n\t[:blank:]')
     fi
     export http_proxy="http://${PROXY_IP}:7890"

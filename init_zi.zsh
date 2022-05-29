@@ -4,11 +4,11 @@ source "${zi_home}/zi.zsh"
 autoload -Uz _zi
 (( ${+_comps}  )) && _comps[zi]=_zi
 
-# Pre-defined configs
-zi snippet ${ZSH_RUNTIME}/config/alias.zsh
-zi snippet ${ZSH_RUNTIME}/config/func.zsh
-zi snippet ${ZSH_RUNTIME}/config/devtools.zsh
-zi snippet ${ZSH_RUNTIME}/config/basic.zsh
+# Pre-defined
+zi snippet ${ZSH_RUNTIME}/ext/alias.zsh
+zi snippet ${ZSH_RUNTIME}/ext/func.zsh
+zi snippet ${ZSH_RUNTIME}/ext/devtools.zsh
+zi snippet ${ZSH_RUNTIME}/ext/basic.zsh
 
 # My extensions
 for i in `find ${ZSH_RUNTIME}/my_ext -maxdepth 1 -type f -name "*.ext.zsh"`; do
@@ -59,7 +59,7 @@ zi snippet OMZP::tmuxinator
 if [[ $OSTYPE == darwin*  ]]; then
 zi snippet OMZP::brew
 zi snippet OMZP::iterm2
-zi snippet ${ZSH_RUNTIME}/config/macos/macos.zsh
+zi snippet ${ZSH_RUNTIME}/ext/macos/macos.zsh
 fi
 
 # Python

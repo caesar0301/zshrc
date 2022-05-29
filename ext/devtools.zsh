@@ -35,3 +35,9 @@ if [ -e "$HOME/.rbenv" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init - zsh)"
 fi
+
+# cuda
+if [ -e "/usr/local/cuda" ]; then
+    export PATH="/usr/local/cuda/bin$PATH"
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+fi
