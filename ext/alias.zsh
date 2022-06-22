@@ -34,3 +34,6 @@ alias cfr="java -jar ~/.zsh.d/bin/cfr-0.152.jar"
 
 # cmake
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+
+# Perf
+alias psmem="ps -o pid,user,%mem,command ax | sort -b -k3 -r"
