@@ -23,7 +23,7 @@ alias gsrh="git submodule foreach --recursive git reset --hard"
 # zsh
 alias zshrc='${=EDITOR} $HOME/.zshrc'
 alias zshd='${=EDITOR} $HOME/.zsh.d/init.zsh'
-alias zshld='source $HOME/.zshrc'
+alias zshld='reload_zshrc'
 
 # vim
 alias vimrc='${=EDITOR} $HOME/.vimrc'

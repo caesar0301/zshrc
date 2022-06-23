@@ -1,4 +1,10 @@
 #-- function utilities for daily usage
+function reload_zshrc {
+    if [ -e $HOME/.zi ]; then
+        ls -d $HOME/.zi/snippets/* | grep ".zsh_runtime.*ext" | xargs rm -rf
+    fi
+    source $HOME/.zshrc
+}
 
 # start or access tmux dev session
 function bingo {

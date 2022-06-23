@@ -1,3 +1,7 @@
+# MacPort
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export LD_LIBRARY_PATH="/opt/local/lib:$LD_LIBRARY_PATH"
+
 # golang
 export GOPATH=${HOME}/go
 export PATH=$GOPATH/bin:$PATH
@@ -5,7 +9,7 @@ export GO111MODULE=on
 export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 
 # pyenv
-if [ -e "$HOME/.pyenv" ]; then
+if [ -e "$HOME/.pyenv" ] && [ command -v pyenv &>/dev/null ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     if command -v pyenv 1>/dev/null 2>&1; then
@@ -25,13 +29,13 @@ if command -v cargo &>/dev/null; then
 fi
 
 # jenv
-if [ -e "$HOME/.jenv" ]; then
+if [ -e "$HOME/.jenv" ] && [ command -v jenv &>/dev/null ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
 fi
 
 # rbenv
-if [ -e "$HOME/.rbenv" ]; then
+if [ -e "$HOME/.rbenv" ] && [ command -v rbenv &>/dev/null ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init - zsh)"
 fi
