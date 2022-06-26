@@ -5,21 +5,9 @@ autoload -Uz _zi
 (( ${+_comps}  )) && _comps[zi]=_zi
 
 # Pre-defined
-zi snippet ${ZSH_RUNTIME}/ext/alias.zsh
-zi snippet ${ZSH_RUNTIME}/ext/func.zsh
-zi snippet ${ZSH_RUNTIME}/ext/devtools.zsh
-zi snippet ${ZSH_RUNTIME}/ext/basic.zsh
-
-# My extensions
-for i in `find ${ZSH_RUNTIME}/my_ext -maxdepth 1 -type f -name "*.ext.zsh"`; do
-    zi snippet $i
-done
-
-# MacOS
+zi snippet ${ZSH_RUNTIME}/ext/pre.zsh
 if [[ $OSTYPE == darwin*  ]]; then
-zi snippet OMZP::brew
-zi snippet OMZP::iterm2
-zi snippet ${ZSH_RUNTIME}/ext/macos/macos.zsh
+    zi snippet ${ZSH_RUNTIME}/ext/macos/macos_pre.zsh
 fi
 
 # OMZ libs
@@ -31,6 +19,11 @@ zi snippet OMZL::directories.zsh
 zi snippet OMZL::git.zsh
 zi snippet OMZL::spectrum.zsh
 zi snippet OMZL::theme-and-appearance.zsh
+
+if [[ $OSTYPE == darwin*  ]]; then
+    zi snippet OMZP::brew
+    zi snippet OMZP::iterm2
+fi
 
 # Efficiency
 zi snippet OMZP::alias-finder
@@ -92,6 +85,19 @@ fpath=($HOME/.zi/plugins/zsh-users---zsh-completions/src $fpath)
 # Fish-shell likes
 zi ice pick"zsh-autosuggestions.zsh"
 zi load zsh-users/zsh-autosuggestions
-
 zi ice pick "zsh-syntax-highlighting.zsh"
 zi load zsh-users/zsh-syntax-highlighting
+
+# My extensions
+zi snippet ${ZSH_RUNTIME}/ext/alias.zsh
+zi snippet ${ZSH_RUNTIME}/ext/func.zsh
+zi snippet ${ZSH_RUNTIME}/ext/devtools.zsh
+
+if [[ $OSTYPE == darwin*  ]]; then
+    zi snippet ${ZSH_RUNTIME}/ext/macos/macos.zsh
+fi
+
+for i in `find ${ZSH_RUNTIME}/my_ext -maxdepth 1 -type f -name "*.ext.zsh"`; do
+    zi snippet $i
+done
+
