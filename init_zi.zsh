@@ -15,6 +15,13 @@ for i in `find ${ZSH_RUNTIME}/my_ext -maxdepth 1 -type f -name "*.ext.zsh"`; do
     zi snippet $i
 done
 
+# MacOS
+if [[ $OSTYPE == darwin*  ]]; then
+zi snippet OMZP::brew
+zi snippet OMZP::iterm2
+zi snippet ${ZSH_RUNTIME}/ext/macos/macos.zsh
+fi
+
 # OMZ libs
 zi snippet OMZL::clipboard.zsh
 zi snippet OMZL::compfix.zsh
@@ -54,13 +61,6 @@ zi snippet OMZP::urltools
 # Tmux
 zi snippet OMZP::tmux
 zi snippet OMZP::tmuxinator
-
-# MacOS
-if [[ $OSTYPE == darwin*  ]]; then
-zi snippet OMZP::brew
-zi snippet OMZP::iterm2
-zi snippet ${ZSH_RUNTIME}/ext/macos/macos.zsh
-fi
 
 # Python
 zi snippet OMZP::pyenv
