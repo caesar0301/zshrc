@@ -1,7 +1,3 @@
-# MacPort
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-export LD_LIBRARY_PATH="/opt/local/lib:$LD_LIBRARY_PATH"
-
 # golang
 export GOPATH=${HOME}/go
 export PATH=$GOPATH/bin:$PATH
@@ -9,11 +5,14 @@ export GO111MODULE=on
 export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 
 # pyenv
-if [ -e "$HOME/.pyenv" ] && [ command -v pyenv &>/dev/null ]; then
+if [ -e "$HOME/.pyenv" ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     if command -v pyenv 1>/dev/null 2>&1; then
+        # Load pyenv automatically
         eval "$(pyenv init --path)"
+        # Load pyenv-virtualenv automatically
+        eval "$(pyenv virtualenv-init -)"
     fi
 fi
 

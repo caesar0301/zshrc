@@ -1,3 +1,10 @@
+# MacPort
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export C_INCLUDE_PATH="/opt/local/include:$C_INCLUDE_PATH"
+export LD_LIBRARY_PATH="/opt/local/lib:$LD_LIBRARY_PATH"
+export LDFLAGS="-L/opt/local/lib/ $LDFLAGS"
+export CPPFLAGS="-I/opt/local/include -L/opt/local/lib $CPPFLAGS"
+
 # Python3
 if [ command -v brew &>/dev/null ] && [ $(brew --prefix python3) ]; then
     PYTHON3_HOME=$(brew --prefix python3)
