@@ -16,11 +16,13 @@ if [ -e "$HOME/.pyenv" ]; then
     fi
 fi
 
-# Rust and cargo
+# Rust
 if command -v rustc &>/dev/null; then
     export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
     export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 fi
+
+# Cargo
 if command -v cargo &>/dev/null; then
     if [ -e "$HOME/.cargo" ]; then
         export PATH="$HOME/.cargo/bin":$PATH
@@ -28,13 +30,13 @@ if command -v cargo &>/dev/null; then
 fi
 
 # jenv
-if [ -e "$HOME/.jenv" ] && [ command -v jenv &>/dev/null ]; then
+if command -v jenv &>/dev/null && [ -e "$HOME/.jenv" ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
 fi
 
 # rbenv
-if [ -e "$HOME/.rbenv" ] && [ command -v rbenv &>/dev/null ]; then
+if command -v rbenv &>/dev/null && [ -e "$HOME/.rbenv" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init - zsh)"
 fi

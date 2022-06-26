@@ -1,11 +1,11 @@
 # Python3
-if [ command -v brew &>/dev/null ] && [ $(brew --prefix python3) ]; then
+if command -v brew &>/dev/null && [ $(brew --prefix python3) ]; then
     PYTHON3_HOME=$(brew --prefix python3)
     export PATH=$PYTHON3_HOME/libexec/bin:$PYTHON3_HOME/bin:$PATH
 fi
 
 # Enable GNU GCC by default
-if [ command -v brew &>/dev/null  ] && [ $(brew --prefix gcc) ]; then
+if command -v brew &>/dev/null && [ $(brew --prefix gcc) ]; then
     GNU_GCC_HOME=$(brew --prefix gcc)
     export PATH=$GNU_GCC_HOME/bin:$PATH
     if [[ -e "$GNU_GCC_HOME/bin/gcc-12" ]]; then
