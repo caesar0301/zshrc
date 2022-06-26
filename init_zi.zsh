@@ -37,7 +37,7 @@ zi snippet OMZP::alias-finder
 zi snippet OMZP::cp
 zi snippet OMZP::extract
 zi snippet OMZP::vi-mode
-zi snippet OMZP::fzf
+#zi snippet OMZP::fzf
 zi snippet OMZP::dirhistory
 
 zi ice pick"z.sh"
