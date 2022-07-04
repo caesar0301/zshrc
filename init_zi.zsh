@@ -1,13 +1,15 @@
 zi_home="${ZSH_RUNTIME}/zi"
+locallib="${ZSH_RUNTIME}/ext"
+my_ext="${ZSH_RUNTIME}/my_ext"
 source "${zi_home}/zi.zsh"
 
 autoload -Uz _zi
 (( ${+_comps}  )) && _comps[zi]=_zi
 
 # Pre-defined
-zi snippet ${ZSH_RUNTIME}/ext/pre.zsh
+zi snippet ${locallib}/pre.zsh
 if [[ $OSTYPE == darwin*  ]]; then
-    zi snippet ${ZSH_RUNTIME}/ext/macos/macos_pre.zsh
+    zi snippet ${locallib}/macos/macos_pre.zsh
 fi
 
 # OMZ libs
@@ -90,15 +92,15 @@ zi ice pick "zsh-syntax-highlighting.zsh"
 zi load zsh-users/zsh-syntax-highlighting
 
 # My extensions
-zi snippet ${ZSH_RUNTIME}/ext/alias.zsh
-zi snippet ${ZSH_RUNTIME}/ext/func.zsh
-zi snippet ${ZSH_RUNTIME}/ext/devtools.zsh
+zi snippet ${locallib}/alias.zsh
+zi snippet ${locallib}/functions.zsh
+zi snippet ${locallib}/devtools.zsh
 
 if [[ $OSTYPE == darwin*  ]]; then
-    zi snippet ${ZSH_RUNTIME}/ext/macos/macos.zsh
+    zi snippet ${locallib}/macos/macos.zsh
 fi
 
-for i in `find ${ZSH_RUNTIME}/my_ext -maxdepth 1 -type f -name "*.ext.zsh"`; do
+for i in `find ${my_ext} -maxdepth 1 -type f -name "*.zsh"`; do
     zi snippet $i
 done
 
