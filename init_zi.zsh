@@ -16,6 +16,7 @@ zi snippet OMZL::compfix.zsh
 zi snippet OMZL::completion.zsh
 zi snippet OMZL::correction.zsh
 zi snippet OMZL::directories.zsh
+zi snippet OMZL::functions.zsh
 zi snippet OMZL::git.zsh
 zi snippet OMZL::spectrum.zsh
 zi snippet OMZL::theme-and-appearance.zsh
