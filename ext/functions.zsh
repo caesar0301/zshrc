@@ -19,9 +19,9 @@ function bingo {
 
 # Prune all docker junk data
 function docker_prune_all {
-    y | docker container prune
-    y | docker image prune
-    y | docker volume prune
+    yes y | docker container prune
+    yes y | docker image prune
+    yes y | docker volume prune
 }
 
 # Remove deleted file from git cache
