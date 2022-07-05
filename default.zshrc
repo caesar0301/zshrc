@@ -22,12 +22,12 @@ if [ -e ${ZSH_RUNTIME}/bin ]; then
     export PATH=${ZSH_RUNTIME}/bin:$PATH
 fi
 
-if [[ ${PLUG_MAN} == "zi" ]] && [[ -e ${ZSH_RUNTIME}/init_zi.zsh ]]; then
-    source ${ZSH_RUNTIME}/init_zi.zsh
+if [[ ${PLUG_MAN} == "zi" ]] && [[ -e ${ZSH_RUNTIME}/init/init_zi.zsh ]]; then
+    source ${ZSH_RUNTIME}/init/init_zi.zsh
 fi
 
-if [[ ${PLUG_MAN} == "zplug" ]] && [[ -e ${ZSH_RUNTIME}/init_zplug.zsh ]]; then
-    source ${ZSH_RUNTIME}/init_zplug.zsh
+if [[ ${PLUG_MAN} == "zplug" ]] && [[ -e ${ZSH_RUNTIME}/init/init_zplug.zsh ]]; then
+    source ${ZSH_RUNTIME}/init/init_zplug.zsh
 fi
 
 if [[ ${PROFILE_PERF} == 1 ]]; then

@@ -1,5 +1,5 @@
-zi_home="${ZSH_RUNTIME}/zi"
-locallib="${ZSH_RUNTIME}/ext"
+zi_home="${ZSH_RUNTIME}/thirdparty/zi"
+locallib="${ZSH_RUNTIME}/lib"
 my_ext="${ZSH_RUNTIME}/my_ext"
 source "${zi_home}/zi.zsh"
 
@@ -65,9 +65,9 @@ zi snippet OMZP::virtualenv
 # Themes
 if command -v starship &>/dev/null; then
     if [[ $OSTYPE == darwin* ]]; then
-        export STARSHIP_CONFIG=$ZSH_HOME/starship/macos.toml
+        export STARSHIP_CONFIG=$locallib/starship/macos.toml
     else
-        export STARSHIP_CONFIG=$ZSH_HOME/starship/basic.toml
+        export STARSHIP_CONFIG=$locallib/starship/basic.toml
     fi
     eval "$(starship init zsh)"
 else

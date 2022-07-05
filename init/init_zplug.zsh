@@ -1,5 +1,5 @@
 # ZPlug
-export ZPLUG_HOME=${ZSH_HOME}/zplug
+export ZPLUG_HOME=${ZSH_RUNTIME}/zplug
 source $ZPLUG_HOME/init.zsh
 
 # OMZ
@@ -37,7 +37,7 @@ zplug "plugins/tmuxinator", from:oh-my-zsh
 zplug "plugins/macos", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
 zplug "plugins/brew", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
 zplug "plugins/iterm2", from:oh-my-zsh, if:"[[ $OSTYPE == darwin* ]]"
-zplug "${ZSH_HOME}/ext/macos", from:local, use:"macos.zsh", if:"[[ $OSTYPE == darwin* ]]"
+zplug "${ZSH_RUNTIME}/ext/macos", from:local, use:"macos.zsh", if:"[[ $OSTYPE == darwin* ]]"
 
 # Python
 zplug "plugins/pyenv", from:oh-my-zsh
@@ -46,9 +46,9 @@ zplug "plugins/virtualenv", from:oh-my-zsh
 # Themes
 if command -v starship &>/dev/null; then
     if [[ $OSTYPE == darwin* ]]; then
-        export STARSHIP_CONFIG=$ZSH_HOME/starship/macos.toml
+        export STARSHIP_CONFIG=$ZSH_RUNTIME/starship/macos.toml
     else
-        export STARSHIP_CONFIG=$ZSH_HOME/starship/basic.toml
+        export STARSHIP_CONFIG=$ZSH_RUNTIME/starship/basic.toml
     fi
     eval "$(starship init zsh)"
 else
@@ -66,13 +66,13 @@ zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh
 zplug "zsh-users/zsh-syntax-highlighting", use:zsh-syntax-highlighting.zsh
 
 # Pre-defined
-zplug "${ZSH_HOME}/ext", from:local, use:"basic.zsh"
-zplug "${ZSH_HOME}/ext", from:local, use:"alias.zsh"
-zplug "${ZSH_HOME}/ext", from:local, use:"func.zsh"
-zplug "${ZSH_HOME}/ext", from:local, use:"devtools.zsh"
+zplug "${ZSH_RUNTIME}/ext", from:local, use:"basic.zsh"
+zplug "${ZSH_RUNTIME}/ext", from:local, use:"alias.zsh"
+zplug "${ZSH_RUNTIME}/ext", from:local, use:"func.zsh"
+zplug "${ZSH_RUNTIME}/ext", from:local, use:"devtools.zsh"
 
 # User extensions
-zplug "${ZSH_HOME}/my_ext", from:local, use:"*.ext.zsh"
+zplug "${ZSH_RUNTIME}/my_ext", from:local, use:"*.ext.zsh"
 
 if ! zplug check; then
     printf "Install? [y/N]: "
