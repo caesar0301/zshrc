@@ -1,6 +1,8 @@
+# Init zi manager
 zi_home="${ZSH_RUNTIME}/thirdparty/zi"
 locallib="${ZSH_RUNTIME}/lib"
 my_ext="${ZSH_RUNTIME}/my_ext"
+
 source "${zi_home}/zi.zsh"
 
 autoload -Uz _zi

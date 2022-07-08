@@ -1,5 +1,5 @@
 #-- function utilities for daily usage
-function reload_zshrc {
+function zshld {
     if [ -e $HOME/.zi ]; then
         ls -d $HOME/.zi/snippets/* | grep "\.zsh_runtime" | xargs rm -rf
     fi

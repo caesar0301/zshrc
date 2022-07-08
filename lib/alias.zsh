@@ -20,17 +20,12 @@ alias ghf="git log --follow -p --"
 alias grsh="git reset --soft HEAD^ && git reset --hard HEAD"
 alias gsrh="git submodule foreach --recursive git reset --hard"
 
-# zsh
-alias zshrc='${=EDITOR} $HOME/.zshrc'
-alias zshd='${=EDITOR} $HOME/.zsh.d/init.zsh'
-alias zshld='reload_zshrc'
-
 # vim
 alias vimrc='${=EDITOR} $HOME/.vimrc'
 alias vimmc='${=EDITOR} $HOME/.vim_runtime/my_configs.vim'
 
 # java
-alias cfr="java -jar ~/.zsh.d/bin/cfr-0.152.jar"
+alias cfr="java -jar ${ZSH_RUNTIME}/bin/cfr-0.152.jar"
 
 # cmake
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
