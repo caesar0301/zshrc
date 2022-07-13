@@ -1,5 +1,4 @@
 # Common
-alias rmf='rm -rf'
 alias duh="du -hs .[^.]*"
 alias em='emacs'
 alias diff='diff -r'
